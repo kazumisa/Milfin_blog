@@ -12,5 +12,5 @@ class Blog extends Model
         'id',
         'created_at',
         'updated_at'
-    ]
+    ];
 }

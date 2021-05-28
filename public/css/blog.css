@@ -1,0 +1,17 @@
+@charset 'utf-8';
+
+/* app.blade.php */
+.milfin_blog {
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* create.blade.php */
+.title,
+.content,
+.create_btn {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
