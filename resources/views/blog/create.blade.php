@@ -2,7 +2,7 @@
 @section('content')
 <form class="create_form" action="{{ route('store') }}" method="POST">
   @csrf
-  <input type="hidden" name="user_id" value="2">
+  <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
   <div class="form-group title">
     <label for="title"><strong>タイトル</strong></label>
     <input type="text" name="title" class="form-control" id="title"　value="{{ old('title') }}">

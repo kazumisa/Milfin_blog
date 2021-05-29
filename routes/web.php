@@ -11,7 +11,7 @@
 |
 */
 
-// 全ユーザのブログ一覧
+// ログインユーザのブログ一覧
 Route::get('/', 'BlogsController@blogsList')->name('blogs');
 
 // ブログ投稿画面表示
@@ -34,4 +34,4 @@ Route::post('/blog/delete/{id}', 'BlogsController@blogDelete')->name('delete');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'BlogsController@index')->name('home');

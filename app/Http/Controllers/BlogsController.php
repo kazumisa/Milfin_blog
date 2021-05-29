@@ -9,13 +9,21 @@ use Auth;
 
 class BlogsController extends Controller
 {
+    // コンストラクタ
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
-     * 全ユーザのブログ一覧
+     * ログインユーザのブログ一覧
      * @param  void
      * @return view 
      */
     public function blogsList() {
-        $blogs = Blog::orderBy('created_at', 'desc')->get();
+        $blogs = Blog::where('user_id', Auth::user()->id)
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(10);
         return view('blog.list', ['blogs' => $blogs]);
     }
 
